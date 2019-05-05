@@ -11,7 +11,7 @@ const path = require('path')
 const app = express()
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
-const port = 3000
+const port = 80
 
 // We're using bodyParser because express.js does not support parsing the request body
 app.use(bodyParser.urlencoded({ extended: false }))
