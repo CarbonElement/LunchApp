@@ -17,6 +17,7 @@ const port = 3000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// Load static files because express doesn't by default
 app.use(express.static('public'));
 
 // Sending an html file when someone visits the app on the root directory. Using path.join because for some reason it doesn't work without it
