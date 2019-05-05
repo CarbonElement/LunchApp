@@ -17,10 +17,12 @@ const port = 3000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+app.use(express.static('public'));
+
 // Sending an html file when someone visits the app on the root directory. Using path.join because for some reason it doesn't work without it
 app.get('/', (req, res) =>
 res.sendFile('index.html', {
-    root: path.join(__dirname, './')
+    root: path.join(__dirname, './public')
 })
 )
 
