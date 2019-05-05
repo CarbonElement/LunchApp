@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Works!</title>
+        <meta charset="UTF-8">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <br>
+        <div class="container">
+            <center><h1>Lunchapp för Strömbackaskolan</h1></center>
+            <br>
+            <br>
+            <form method="post" action="/insert">
+                    <select name="username" id="username" class="form-control action form-control-lg">
+                        <option value="">Välja person</option>
+                        <option value="khaled">Khaled</option>
+                        <option>Person 2</option>
+                        <option>Person 3</option>
+                    </select>
+                    <br>
+<select name="rest" id="rest" class="form-control action form-control-lg">
+<option value="">Välja restaurang</option>
+<option value="2 kök Nolia">2 kök Nolia</option>
+<option value="Adana">Adana</option>
+<option value="Akustikum">Akustikum</option>
+<option value="Bastard Burger">Bastard Burger</option>
+<option value="BCG Diner">BCG Diner</option>
+<option value="Big Boy">Big Boy</option>
+<option value="Bishops Arms">Bishops Arms</option>
+<option value="Blå ängeln">Blå ängeln</option>
+<option value="Borggården">Borggården</option>
+<option value="Cafe Piteå">Cafe Piteå</option>
+<option value="Espresso House">Espresso House</option>
+<option value="Golden Dragon">Golden Dragon</option>
+<option value="Kebab House">Kebab House</option>
+<option value="Kifas">Kifas</option>
+<option value="Koler">Koler</option>
+<option value="Lemon Tree">Lemon Tree</option>
+<option value="Max">Max</option>
+<option value="Miaws thaikök">Miaws thaikök</option>
+<option value="Nodo">Nodo</option>
+<option value="Olearys">Olearys</option>
+<option value="Paltzerian">Paltzerian</option>
+<option value="Piteå Golfklubb">Piteå Golfklubb</option>
+<option value="Pitstop">Pitstop</option>
+<option value="Röda lyktan - Gallerian">Röda lyktan - Gallerian</option>
+<option value="Röda lyktan - Småstaden">Röda lyktan - Småstaden</option>
+<option value="Statt">Statt</option>
+<option value="Subway">Subway</option>
+<option value="Sunes">Sunes</option>
+<option value="Thai garden">Thai garden</option>
+<option value="Tommys Kök">Tommys kök</option>
+<option value="Viking">Viking</option>
+</select>
+<h3>Smak</h3>    
+<span>
+    <input type="radio" name="smak" value="1">
+    <input type="radio" name="smak" value="2">
+    <input type="radio" name="smak" value="3">
+    <input type="radio" name="smak" value="4">
+    <input type="radio" name="smak" value="5">
+  </span>
+  <h3>Kvalitet</h3> 
+  <span>
+    <input type="radio" name="kvalitet" value="1">
+    <input type="radio" name="kvalitet" value="2">
+    <input type="radio" name="kvalitet" value="3">
+    <input type="radio" name="kvalitet" value="4">
+    <input type="radio" name="kvalitet" value="5">
+  </span>
+  <h3>Råvaror</h3>    
+<span>
+    <input type="radio" name="ravaror" value="1">
+    <input type="radio" name="ravaror" value="2">
+    <input type="radio" name="ravaror" value="3">
+    <input type="radio" name="ravaror" value="4">
+    <input type="radio" name="ravaror" value="5">
+  </span>
+  <br><br>
+  <input class="btn btn-light btn-lg" type="submit" name="add"  value="Rösta">
+  
+  <a class="btn btn-light btn-lg" href="result.php" role="button" style="position: absolute; right: 20%;">Resultat</a>
+            </form>
+            
+        </div>
+    </body>
+</html>
