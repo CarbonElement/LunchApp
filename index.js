@@ -39,6 +39,10 @@ app.post('/insert', (req, res) => {
       res.send("not work: smak")
     } else if (req.body.username == '' || undefined) {
       res.send("not work: username")
+    } else if(req.body.kvalitet == undefined || '') {
+      res.send("not work: kvalitet")
+    } else if(req.body.ravaror == undefined || '') {
+      res.send("not work: ravaror")
     } else {
       res.send("work")
     }
