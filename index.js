@@ -11,6 +11,10 @@ const path = require('path')
 const app = express()
 const mysql = require('mysql')
 const bodyParser = require('body-parser')
+// I am using chalk because I like colors.
+const chalk = require('chalk')
+
+// You can set the server port here.
 const port = 80
 
 // We're using bodyParser because express.js does not support parsing the request body
@@ -29,22 +33,25 @@ res.sendFile('index.html', {
 
 // This app uses POST requests to insert data to the database. So when a POST request is sent to /insert we'll insert the data in the request to the database.
 app.post('/insert', (req, res) => {
-    // Logs the request body for debugging purposes.
-    console.log('req.body');
-    console.log(req.body);
     // This checks if someone didn't sumbit the appropriate values to the HTML form and just left it default or empty.
     if(req.body.rest == '' || undefined) {
-      res.send("not work: rest")
+      res.send("<h1>[DEBUG]</h1> <h2>Error: rest is empty</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'Error: rest is empty'))
     } else if(req.body.smak == undefined || '') {
-      res.send("not work: smak")
+      res.send("<h1>[DEBUG]</h1> <h2>Error: smak is empty</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'Error: smak is empty'))
     } else if (req.body.username == '' || undefined) {
-      res.send("not work: username")
+      res.send("<h1>[DEBUG]</h1> <h2>Error: username is empty</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'Error: username is empty'))
     } else if(req.body.kvalitet == undefined || '') {
-      res.send("not work: kvalitet")
+      res.send("<h1>[DEBUG]</h1> <h2>Error: kvalitet is empty</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'Error: kvalitet is empty'))
     } else if(req.body.ravaror == undefined || '') {
-      res.send("not work: ravaror")
+      res.send("<h1>[DEBUG]</h1> <h2>Error: ravaror is empty</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'Error: ravaror is empty'))
     } else {
-      res.send("work")
+      res.send("<h1>[DEBUG]</h1> <h2>work</h2>")
+      console.log(chalk.blue('[DEBUG] ' + 'All inputs are not empty'))
     }
 })
 
@@ -55,8 +62,14 @@ var connection = mysql.createConnection({
     database : "lunchapp"
   });
 
-  //Connects to the MySQL database connection
+//Connects to the MySQL database connection
 connection.connect();
 
-// Obvious! Listens on the port variable we set and then console logs so we know it's now listening
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+// Listens on the port variable we set and then logs the credits because I wrote the project, and lets us know that it's listening on the port.
+app.listen(port, () => {
+   console.log('------------------------------------------')
+   console.log(chalk.magenta.bold("Credits: CarbonElement/Khaled"))
+   console.log(chalk.magenta.bold("https://github.com/CarbonElement/"))
+   console.log('------------------------------------------')
+   console.log(chalk.blue(`[DEBUG] LunchApp listening on port ${port}!`))
+})
